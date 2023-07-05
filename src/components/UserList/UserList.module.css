@@ -1,0 +1,30 @@
+.users {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 40rem;
+
+}
+
+.users ul {
+    list-style: none;
+    padding: 1rem;
+
+}
+
+.users li {
+    border: 1px solid #4f005f;;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    color: #4f005f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.users p{
+    text-align: center;
+    font-weight: bold;
+    color:#4f005f;
+
+}
+
