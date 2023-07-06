@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {Fragment, useState} from "react";
 import styles from './AddUser.module.css';
 import ErrorModal from "../ErrorModal/ErrorModal";
 import Card from "../UI/Card";
@@ -41,7 +41,7 @@ const AddUser = (props) => {
             openModal();
         } else if (+enteredAge <= 0 || +enteredAge >= 110) {
             setErrorMessage('Please enter a valid age.');
-            openModal();
+            openModal();   
         } else {
             props.onAddUser(enteredUsername, enteredAge);
         }
@@ -51,6 +51,8 @@ const AddUser = (props) => {
 
     };
 
+
+
 //     const collectedDataHandler = (name, value) => {
 //         setCollectedData((prevState) => {
 //             return {
@@ -59,7 +61,7 @@ const AddUser = (props) => {
 // }})    }
 
     return (
-
+<Fragment>
         <Card className={styles.input}>
                     <form  onSubmit={submitHandler}>
             <label>Username
@@ -69,9 +71,9 @@ const AddUser = (props) => {
             <input type='number' value={enteredAge} onChange={ageChangeHandler}></input>
             </label>
                 <Button type="submit" className={styles['input_button']}>Add User</Button></form>
-            
+            </Card>
             {isOpen && (<ErrorModal onClose={closeModal}><p>{errorMessage}</p></ErrorModal>)}
-      </Card>
+      </Fragment>
             
 
 )

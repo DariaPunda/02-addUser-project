@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import AddUser from './components/AddUser/AddUser';
 import UserList from './components/UserList/UserList';
 function App() {
@@ -20,11 +20,11 @@ const [userList, setUserList] = useState([])
   
  
   return (
-    <div>
+    <Fragment>
       <AddUser onAddUser={collectedData } />
       <UserList onDeleteUser={deleteUser } users={userList} />
       
-    </div>
+    </Fragment>
   );
 }
 
